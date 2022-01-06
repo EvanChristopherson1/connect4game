@@ -39,12 +39,45 @@ public class connectMain extends JFrame{
 	public void makeBoard() {
 		for(int r = 0;r<Rows;r++) {
 			for(int c = 0;c<Cols;c++) {
-				board[r][c] = 0;
+				board[r][c] = Empty_Space_Value;
 				NewJButton b = new NewJButton(r, c);
 				b.addActionListener(new MyAction());
 				this.add(b);
 			}
 		}
+	}
+	public boolean checkWin(NewJButton b) {
+		
+		return false;
+	}
+	public int up(NewJButton b,int count,int player) {
+		if(count==3) return count;
+		if(board[b.Row][b.Col]!=player) return 0;
+		count++;
+		int index = b.Row-1*b.Col;
+		NewJButton j = (NewJButton) b.getParent().getComponent(index);
+		return count = up()
+	}
+	public int down(NewJButton b,int count) {
+		
+	}
+	public int left(NewJButton b,int count) {
+		
+	}
+	public int right(NewJButton b,int count) {
+		
+	}
+	public int upRight(NewJButton b,int count) {
+		
+	}
+	public int upLeft(NewJButton b,int count) {
+		
+	}
+	public int downRight(NewJButton b,int count) {
+		
+	}
+	public int downLeft(NewJButton b,int count) {
+		
 	}
 	private class MyAction implements ActionListener{
 	    public void actionPerformed(ActionEvent event){
